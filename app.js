@@ -147,7 +147,7 @@ sliderList.append(firstClone)
 sliderList.append(lastClone)
 
 
-const sliderWidth = sliderItemElement[index].clientWidth;
+const sliderWidth = slide.clientWidth;
 const slicks = $$('.page__content-slider-slickdot li')
 
 // Slider slickdot
