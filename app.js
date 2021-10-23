@@ -196,14 +196,14 @@ const moveToNextSlide = () => {
     sliderItemElement = getSliderItem()
     if(index >= sliderItemElement.length - 1) return;
     index++;
-    sliderList.style.transform = `translateX(${-sliderWidth * index}px)`
+    sliderList.style.transform = `translateX(${-sliderWidth * index}%)`
     sliderList.style.transition = '1s'
 }
 
 const moveToPrevSlide = () => {
     if(index <= 0) return;
     index--;
-    sliderList.style.transform = `translateX(${-sliderWidth * index}px)`
+    sliderList.style.transform = `translateX(${-sliderWidth * index}%)`
     sliderList.style.transition = '1s'
 }
 
