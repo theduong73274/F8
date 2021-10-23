@@ -84,7 +84,8 @@ const coursesApp = {
     courses: [
         {
             name: 'Javascript cơ bản',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/1.png'
+            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/1.png',
+            link: './javascript-course.html'
         },
         {
             name: 'Don\'t Touch Your Face',
@@ -128,7 +129,7 @@ const coursesApp = {
             return `
             <div class="grid__column-3">
                 <div class="courses__content-courses-item">
-                    <a href="" class="courses__content-courses-link">
+                    <a href="${data.link}" class="courses__content-courses-link">
                         <img src="${data.img}" alt="" class="courses__content-courses-img">
                     </a>
                     <a href="" class="courses__content-courses-description">
