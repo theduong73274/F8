@@ -147,7 +147,7 @@ sliderList.append(firstClone)
 sliderList.append(lastClone)
 
 
-const sliderWidth = slide.clientWidth;
+const sliderWidth = 100;
 const slicks = $$('.page__content-slider-slickdot li')
 
 // Slider slickdot
@@ -182,7 +182,7 @@ sliderList.addEventListener('transitionend', () => {
     if(sliderItemElement[index].id === firstClone.id) {
         sliderList.style.transition = 'none';
         index = 0;
-        sliderList.style.transform = `translateX(${-sliderWidth * index}px)`
+        sliderList.style.transform = `translateX(${-sliderWidth * index}%)`
     }
 })
 
