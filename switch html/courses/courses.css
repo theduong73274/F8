@@ -219,6 +219,7 @@
     font-size: 1.8rem;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .page__js-course-app-video-description-header span.isclick {
@@ -227,10 +228,23 @@
 }
 
 .page__js-course-app-video-description-sub {
+    margin: 30px 0;
     display: flex;
     flex-direction: column;
 }
 
 .page__js-course-app-video-description-sub span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 350;
+    color:  #555;
+    margin-bottom: 20px;
+}
+
+.page__js-course-app-video-description-sub a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.page__js-course-app-video-description-sub a:hover {
+    text-decoration: underline;
 }
