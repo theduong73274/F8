@@ -164,16 +164,43 @@
     width: calc(100% - 320px);
     height: 100%;
     overflow: hidden scroll;
+    position: relative;
 }
 
-.page__js-course-app-list {
-    background-color: red;
-    width: 320px;
-    height: 100%;
-    overflow: hidden scroll;
+.page__js-course-app-video-display-btn {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 160px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #29303b;
+    transition: all ease 1s;
+    transform: translateX(65%);
+    cursor: pointer;
+    opacity: 0;
+    display: none;
 }
 
-.page__js-course-app-video-content {
+.page__js-course-app-video-display-btn:hover {
+    transform: translateX(0);
+}
+
+.page__js-course-app-video-display-btn i {
+    padding: 20px;
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+
+.page__js-course-app-video-display-btn span {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--white-color);
+}
+
+.page__js-course-app-video-content-wrap {
     padding: 0 80px;
     height: 83%;
     width: 100%;
@@ -247,4 +274,148 @@
 
 .page__js-course-app-video-description-sub a:hover {
     text-decoration: underline;
+}
+
+/* Courses list */
+
+.page__js-course-app-list {
+    background-color: var(--white-color);
+    width: 320px;
+    height: 100%;
+    overflow: hidden scroll;
+}
+
+.page__js-course-app-list::-webkit-scrollbar {
+    display: none;
+}
+
+.page__js-course-app-list-header {
+    padding: 12px 6px 8px 16px;
+    background-color: var(--header-course);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.page__js-course-app-list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2rem;
+    margin-bottom: 4px;
+}
+
+.page__js-course-app-list-heading span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-sub-color);
+}
+
+.page__js-course-app-list-hidden-btn {
+    background-color: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform ease 0.3s;
+}
+
+.page__js-course-app-list-hidden-btn:hover {
+    transform: translateX(2px);
+}
+
+.page__js-course-app-list-hidden-btn i::after {
+    content: "";
+    width: 1.5px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 1px;
+    right: 3px;
+}
+
+.page__js-course-app-list-header-progress {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.page__js-course-app-list-content-title {
+    padding: 8px 6px 8px 16px;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.page__js-course-app-list-content-title-heading {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.page__js-course-app-list-content-title-current-course {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 2rem;
+}
+
+.page__js-course-app-list-content-item {
+    padding: 8px 6px 8px 14px;
+    display: flex;
+    background-color: var(--white-color);
+    cursor: pointer;
+    transition: all ease 0.3s;
+}   
+
+.page__js-course-app-list-content-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.page__js-course-app-list-content-item-icon i {
+    font-size: 1.4rem;
+    color: var(--success-color);
+    margin-right: 16px;
+}
+
+.page__js-course-app-list-content-item-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.page__js-course-app-list-content-item-text {
+    font-size: 1.5rem;
+    font-weight: 350;
+    margin-bottom: 6px;
+}
+
+.page__js-course-app-list-content-item-time {
+    font-size: 1.3rem;
+    font-weight: 350;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.page__js-course-app-list-content-practice {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 60px;
+    padding: 0 40px 0 30px;
+    display: none;
+}
+
+.page__js-course-app-list-content-practice span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.page__js-course-app-list-content-practice-icon {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--success-color);
+    margin-right: 16px;
+    color: var(--white-color);
+    font-size: 1.2rem;
 }

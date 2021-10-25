@@ -326,6 +326,11 @@ html::-webkit-scrollbar {
     align-items: center;
 }
 
+.page__sidebar-list li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all ease 0.3s;
+}
+
 .page__sidebar-add-item-link {
     display: flex;
     align-items: center;

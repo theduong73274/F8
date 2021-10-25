@@ -1,6 +1,5 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-console.log(document.URL)
 // header focus on inputelement and click information
 const headerInputElement = $('.header__search-wrap input')
 const rootElement = $('.app__wrap')
@@ -73,6 +72,8 @@ addBtn.addEventListener('click', function(e) {
 boxAdd.addEventListener('click', function(e) {
     e.stopPropagation()
 })
+
+// Sidebar active
 
 // Slider render
 
@@ -257,7 +258,8 @@ const coursesApp = {
     courses: [
         {
             name: 'Javascript cơ bản',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/1.png'
+            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/1.png',
+            link: './javascript-course.html'
         },
         {
             name: 'Don\'t Touch Your Face',
@@ -301,7 +303,7 @@ const coursesApp = {
             return `
             <div class="page__content-home-courses-item">
                 <div class="grid__column">
-                    <a href="" class="page__content-home-courses-link">
+                    <a href="${data.link}" class="page__content-home-courses-link">
                         <img src="${data.img}" alt="" class="page__content-home-courses-img">
                     </a>
                     <a href="" class="page__content-home-courses-description">

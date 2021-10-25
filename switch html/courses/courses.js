@@ -150,3 +150,5 @@ const coursesApp = {
 }
     
 coursesApp.start()
+
+
