@@ -326,7 +326,7 @@ html::-webkit-scrollbar {
     align-items: center;
 }
 
-.page__sidebar-list li:hover {
+.page__sidebar-item-handle:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transition: all ease 0.3s;
 }
