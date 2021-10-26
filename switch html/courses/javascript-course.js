@@ -1,7 +1,7 @@
 
 
 // Hidden courses list
-
+const appDescriptionList = document.querySelector('.page__js-course-app-video-description')
 const courseBtnList = document.querySelector('.page__js-course-app-list-hidden-btn');
 const courseBoxList = document.querySelector('.page__js-course-app-list');
 const courseVideoApp = document.querySelector('.page__js-course-app-video');
@@ -12,16 +12,18 @@ courseBtnList.onclick = () => {
     courseBoxList.style.width = '0px';
     courseVideoApp.style.width = '100%';
     activeBtnCourses.style.opacity = '1';
-    activeBtnCourses.style.display = 'flex'
-    courseVideoContent.style.height = '100%'
+    activeBtnCourses.style.display = 'flex';
+    courseVideoContent.style.height = '100%';
+    appDescriptionList.style.padding = '0 200px';
 }
 
 
 activeBtnCourses.onclick = () => {
     courseBoxList.style.width = '320px';
     courseVideoApp.style.width = 'calc(100% - 320px)';
-    activeBtnCourses.style.display = 'none'
-    courseVideoContent.style.height = '100%'
+    activeBtnCourses.style.display = 'none';
+    courseVideoContent.style.height = '100%';
+    appDescriptionList.style.padding = '0 80px';
 }
 
 const btnOpenStyle = getComputedStyle(activeBtnCourses)
@@ -29,7 +31,6 @@ const btnOpenStyle = getComputedStyle(activeBtnCourses)
 const boxCourseListStyle = getComputedStyle(courseBoxList)
 console.log(boxCourseListStyle.width)
 courseVideoContent.onmouseover = function() {
-    var timeOut;
     if(boxCourseListStyle.width != '320px') {
         activeBtnCourses.style.opacity = '1';
         timeOut = setTimeout(function() {
@@ -973,3 +974,127 @@ const lessionApp = {
 
 lessionApp.start()
 
+
+// comment
+
+const inputComment = document.querySelector('.page__js-course-app-video-description-comment-input')
+const handleComment = document.querySelector('.page__js-course-app-video-description-comment-handle-descript')
+const exitComment = document.querySelector('.page__js-course-app-video-description-comment-cancle')
+const completeComment =document.querySelector('.page__js-course-app-video-description-comment-complete')
+
+inputComment.onfocus = function() {
+    handleComment.style.display = 'flex'
+}
+
+exitComment.onclick = function() {
+    handleComment.style.display = 'none';
+    inputComment.value = ''
+}
+
+inputComment.addEventListener('input', function(e) {
+    if(e.target.value != '') {
+        completeComment.style.backgroundColor = 'var(--primary-color)'
+    } else {
+        completeComment.style.backgroundColor = ''
+    }
+})
+
+
+// Comment
+
+const commentList = document.querySelector('.page__js-course-app-video-comment-app-wrap')
+
+const commentApp = {
+    comments: [
+        {
+            img: 'https://graph.facebook.com/443641620272752/picture?width=400&height=400" class="page__js-course-app-video-comment-app-user-img',
+            name: 'Hoàng Anh',
+            content: 'Cảm ơn anh Sơn đã xây dựng khóa học hay như vậy'
+        },
+        {
+            img: 'https://fullstack.edu.vn/assets/images/nobody_m.256x256.jpg',
+            name: 'Linh Tran',
+            content: 'Sao a Sơn phát âm ra nhiều gió nghe hay thế ạ?'
+        },
+        {
+            img: 'https://avatar-redirect.appspot.com/google/112851236903414529818?size=400',
+            name: 'Kỳ Lê Xuân',
+            content: 'bài khá dễ hiểu, học bài mới và cũng ôn luôn bài cũ, các bài có sự liên quan đến nhau'
+        },
+        {
+            img: 'https://avatar-redirect.appspot.com/google/107464967909874209882?size=400',
+            name: 'Hiệp Trần',
+            content: 'Cho mình hỏi khóa học này miễn phí ạ? Sao lại có sự vô lý vậy nhỉ??'
+        },
+        {
+            img: 'https://avatar-redirect.appspot.com/google/112609385398904073084?size=400',
+            name: 'Viễn Đông',
+            content: 'càng học càng cuốn ae ạ'
+        },
+        {
+            img: 'https://avatar-redirect.appspot.com/google/113220886729801824688?size=400',
+            name: 'Văn Lăng Nguyễn',
+            content: 'Mọi người cho mình hỏi làm sao để code xong bên chrom nó hiện luôn như của a sơn vậy. Mình toàn ctrol+S sau đó qua web bấm F5 mới được.'
+        },
+        {
+            img: 'https://avatar-redirect.appspot.com/google/114930983328114536231?size=400',
+            name: 'Đào Tấn Hào',
+            content: 'anh chị giúp em bài 2 với ạ, em làm hoài không hiểu đc...'
+        },
+        {
+            img: 'https://graph.facebook.com/2556110291361032/picture?width=400&height=400',
+            name: 'Hyng Minh',
+            content: 'còn chia lấy phần nguyên là như nào anh'
+        },
+    ],
+
+    render: function() {
+        const commnetHtmls = this.comments.map(function(data) {
+            return `
+            <div class="page__js-course-app-video-comment-app-item">
+                <img src="${data.img}" class="page__js-course-app-video-comment-app-user-img"></img>
+                <div class="page__js-course-app-video-comment-app-item-content-wrap">
+                    <div class="page__js-course-app-video-comment-app-item-content">
+                        <h3 class="page__js-course-app-video-comment-app-item-name">${data.name}</h3>
+                        <span class="page__js-course-app-video-comment-app-item-content-text">${data.content}</span>
+                    </div>
+                    <div class="page__js-course-app-video-comment-app-item-content-handle">
+                        <span class="page__js-course-app-video-comment-app-item-content-handle-text">Thích</span>
+                        <span class="page__js-course-app-video-comment-app-item-content-handle-text">Trả lời</span>
+                        <span class="page__js-course-app-video-comment-app-item-content-handle-date">2 tháng trước</span>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </div>
+            `
+        })
+
+        commentList.innerHTML = commnetHtmls.join('')
+
+
+    },
+
+    start: function() {
+        this.render()
+    }
+
+}
+
+commentApp.start()
+
+// Description
+
+const tabsDescription = document.querySelectorAll('.description-tab')
+const panesDescription = document.querySelectorAll('.description-pane')
+
+tabsDescription.forEach(function(tab, index) {
+    const pane = panesDescription[index]
+    // console.log(pane)
+    tab.onclick = function() {
+        document.querySelector('.description-tab.isclick').classList.remove('isclick')
+        document.querySelector('.description-pane.isopen-description').classList.remove('isopen-description')
+
+        this.classList.add('isclick')
+        pane.classList.add('isopen-description')
+    }
+})

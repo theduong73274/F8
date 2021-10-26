@@ -160,8 +160,9 @@
 }
 
 .page__js-course-app-video {
-    background-color: black;
-    width: calc(100% - 320px);
+    background-color: #fff;
+    /* flex: 0.74; */
+    width: 75%;
     height: 100%;
     overflow: hidden scroll;
     position: relative;
@@ -205,6 +206,14 @@
     height: 83%;
     width: 100%;
     background-color: black;
+}
+
+.page__js-course-app-video-content-wrap.ishanging {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
 }
 
 .page__js-course-app-video-content {
@@ -259,6 +268,10 @@
     color: rgba(0, 0, 0, 1);
 }
 
+.page__js-course-app-video-description-wrap-content {
+    display: none;
+}
+
 .page__js-course-app-video-description-sub {
     margin: 30px 0;
     display: flex;
@@ -281,11 +294,325 @@
     text-decoration: underline;
 }
 
+.page__js-course-app-video-description-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page__js-course-app-video-description-comment-quantity {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.page__js-course-app-video-description-social-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.page__js-course-app-video-description-social-icon {
+    margin: 0 10px;
+    transition: all ease 0.3s;
+    cursor: pointer;    
+}
+
+.page__js-course-app-video-description-social-icon.fb {
+    font-size: 1.6rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #4080ff;
+}
+
+.page__js-course-app-video-description-social-icon:hover {
+    transform: scale(1.1);
+}
+
+.page__js-course-app-video-description-social-icon.mail {
+    font-size: 1.6rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #f47425;
+}
+
+.page__js-course-app-video-description-social-icon.sync {
+    font-size: 1.6rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #666666;
+}
+
+.page__js-course-app-video-description-comment {
+    margin-top: 30px; 
+    display: flex;
+}
+
+
+.page__js-course-app-video-description-comment-user-img {
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.page__js-course-app-video-description-comment-handle {
+    margin-top: 6px;
+    margin-right: 50px;
+    height: 95px;
+    flex: 1;
+}
+
+.page__js-course-app-video-description-comment-input {
+    font-size: 1.4rem;
+    font-weight: 300;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    line-height: 2rem;
+}
+
+.page__js-course-app-video-description-comment-handle-descript {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page__js-course-app-video-description-comment-handle-post {
+    display: flex;
+}
+
+.page__js-course-app-video-description-comment-handle-code {
+    font-size: 1.3rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.page__js-course-app-video-description-comment-handle-post h3 {
+    height: 35px;
+    width: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white-color);
+    background-color: #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.page__js-course-app-video-description-comment-cancle {
+    background-color: transparent !important;
+    color: #555 !important;
+}
+
+.page__js-course-app-video-description-comment-cancle:hover {
+    background-color: #ccc !important;
+    color: #fff !important;
+}
+
+
+/* Comment */
+
+.page__js-course-app-video-comment-app-wrap {
+    padding-bottom: 50px;
+}
+
+.page__js-course-app-video-comment-app-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.page__js-course-app-video-comment-app-user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.page__js-course-app-video-comment-app-item-content {
+    padding: 6px 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.page__js-course-app-video-comment-app-item-name {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.page__js-course-app-video-comment-app-item-content-text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.8rem;
+    word-spacing: 1px;
+}
+
+.page__js-course-app-video-comment-app-item-content-handle {
+    margin-top: 15px;
+    font-size: 1.4rem;
+}
+
+.page__js-course-app-video-comment-app-item-content-handle-text {
+    color: var(--primary-color);
+    margin: 0 4px;
+}
+
+.page__js-course-app-video-comment-app-item-content-handle-text:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.page__js-course-app-video-comment-app-item-content-handle-date {
+    margin: 0 10px 0 4px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.page__js-course-app-video-comment-app-item-content-wrap:hover .fa-ellipsis-h {
+    opacity: 1;
+}
+
+.page__js-course-app-video-comment-app-item-content-handle i {
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+/* Note */
+
+.page__js-course-app-video-description-wrap-note {
+    padding: 30px 80px;
+    display: none;
+}
+
+.page__js-course-app-video-description-wrap-content-note-button {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.page__js-course-app-video-description-wrap-content-note-button-wrap {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.page__js-course-app-video-description-wrap-content-note-button-wrap:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.page__js-course-app-video-description-wrap-content-note-time {
+    padding-top: 20px;
+}
+
+.page__js-course-app-video-description-wrap-content-note-time span {
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 5px 5px 5px 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+.page__js-course-app-video-description-wrap-content-note-time i {
+    padding-left: 20px;
+
+}
+
+.page__js-course-app-video-description-wrap-content-note-item {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page__js-course-app-video-description-wrap-content-note-item h3{
+    margin: 0;
+    padding-top: 25px;
+    font-size: 1.8rem;
+}
+
+.page__js-course-app-video-description-wrap-content-note-item p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.page__js-course-app-video-description-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page__js-course-app-video-description-footer h2 {
+    font-size: 1.6rem;
+}
+
+.page__js-course-app-video-description-footer span {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.page__js-course-app-video-description-footer i {
+    color: #d43c68;
+}
+
+
+
+/* Relate */
+
+.page__js-course-app-video-description-wrap-relate {
+    padding-top: 50px;
+    display: none;
+}
+
+.isopen-description {
+    display: block;
+}
+
 /* Courses list */
 
 .page__js-course-app-list {
     background-color: var(--white-color);
-    width: 320px;
+    /* flex: 0.26; */
+    width: 25%;
     height: 100%;
     overflow: hidden scroll;
 }

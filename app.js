@@ -262,6 +262,10 @@ const coursesApp = {
             link: './javascript-course.html'
         },
         {
+            name: 'HTML, CSS từ Zero đến Hero',
+            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/2.png'
+        },
+        {
             name: 'Don\'t Touch Your Face',
             img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/4/4.jpeg'
         },
@@ -276,10 +280,6 @@ const coursesApp = {
         {
             name: 'Node & ExpressJS',
             img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/6.png'
-        },
-        {
-            name: 'HTML, CSS từ Zero đến Hero',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/2.png'
         },
         {
             name: 'Kiến Thức Nhập Môn',
