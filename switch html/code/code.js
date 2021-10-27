@@ -73,3 +73,67 @@ addBtn.addEventListener('click', function(e) {
 boxAdd.addEventListener('click', function(e) {
     e.stopPropagation()
 })
+
+
+
+var testLink = document.getElementsByTagName('a')
+
+const testWarn = document.querySelector('.test-warn')
+// testLink = [testLink]
+console.log(testLink.length)
+for(let i = 0; i < testLink.length; i++) {
+    const testLinks = testLink[i]
+    if(testLinks.getAttribute('href') === "undefined" || testLinks.getAttribute('href') === "") {
+        testLinks.setAttribute("href", "#")
+        testLinks.addEventListener('click', function(e) {
+            e.preventDefault()
+        })
+    }
+
+    testLinks.onclick = function() {
+        if(testLinks.getAttribute('href') === '#') {
+            // testWarn.style.display = 'block'
+            // setTimeout(function() {
+            // testWarn.style.display = 'none'
+
+            // },3000)
+            alert()
+        }
+    }
+}
+
+
+const pageContent = document.querySelector('.page__content')
+var testLink = pageContent.getElementsByTagName('a')
+
+const noticeWarn = document.querySelector('#notice')
+for(let i = 0; i < testLink.length; i++) {
+    const testLinks = testLink[i]
+    if(testLinks.getAttribute('href') === "undefined" || testLinks.getAttribute('href') === "") {
+        testLinks.setAttribute("href", "#")
+        testLinks.addEventListener('click', function(e) {
+            e.preventDefault()
+        })
+    }
+
+    testLinks.onclick = function() {
+        if(testLinks.getAttribute('href') === '#') {
+            const warning = document.createElement('div')
+            warning.classList.add('notice__warn');
+            warning.innerHTML = `
+                <div class="notice__warn-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="notice__warn-content">
+                    <h3 class="notice__warn-heading">Thông báo</h3>
+                    <span class="notice__warn-message">Nội dung đang trong quá trình hoàn thiện !</span>
+                </div>
+            `
+            noticeWarn.appendChild(warning)
+
+            setTimeout(function() {
+                noticeWarn.removeChild(warning)
+            },2500)
+        }
+    }
+}

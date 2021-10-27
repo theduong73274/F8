@@ -611,7 +611,6 @@
 
 .page__js-course-app-list {
     background-color: var(--white-color);
-    /* flex: 0.26; */
     width: 25%;
     height: 100%;
     overflow: hidden scroll;
@@ -619,17 +618,15 @@
 
 .page__js-course-app-list::-webkit-scrollbar {
     width: 7px;
-    /* display: none; */
 }
 
 .page__js-course-app-list::-webkit-scrollbar-track {
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+    display: none;
 }
 
 .page__js-course-app-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #686868;
+    background-color: #979797;
 }
 
 .page__js-course-app-list-header {

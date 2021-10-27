@@ -1099,3 +1099,4 @@ tabsDescription.forEach(function(tab, index) {
         pane.classList.add('isopen-description')
     }
 })
+
