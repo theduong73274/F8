@@ -988,7 +988,8 @@ inputComment.onfocus = function() {
 
 exitComment.onclick = function() {
     handleComment.style.display = 'none';
-    inputComment.value = ''
+    inputComment.value = '';
+    completeComment.style.backgroundColor = ''
 }
 
 inputComment.addEventListener('input', function(e) {

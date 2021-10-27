@@ -263,7 +263,8 @@ const coursesApp = {
         },
         {
             name: 'HTML, CSS từ Zero đến Hero',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/2.png'
+            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/2.png',
+            link: './html-css-course.html'
         },
         {
             name: 'Don\'t Touch Your Face',
@@ -593,6 +594,7 @@ const featuredVideoApp = {
             view: 127.638,
             like: 3.609,
             comment: 194,
+            link: 'https://www.youtube.com/watch?v=YH-E4Y3EaT4'
         },
         {
             name: '"Code Thiếu Nhi Battle" Tranh Giành Trà Sữa Size L',
@@ -600,6 +602,7 @@ const featuredVideoApp = {
             view: 112.326,
             like: 2.808,
             comment: 147,
+            link: 'https://www.youtube.com/watch?v=sgq7BH6WxL8'
         },
         {
             name: 'Phương pháp & quan điểm học lập trình của Sơn Đặng',
@@ -607,6 +610,7 @@ const featuredVideoApp = {
             view: 37.807,
             like: 2.425,
             comment: 202,
+            link: 'https://www.youtube.com/watch?v=DpvYHLUiZpc'
         },
         {
             name: 'Làm sao để có thu nhập cao và đi xa hơn trong ngành IT?',
@@ -614,6 +618,7 @@ const featuredVideoApp = {
             view: 37.316,
             like: 1.934,
             comment: 196,
+            link: 'https://www.youtube.com/watch?v=oF7isq9IjZM'
         },
         {
             name: 'Lần trở lại này F8 sẽ làm gì cho các bạn? Học lập trình để đi làm tại F8 nào!',
@@ -621,6 +626,7 @@ const featuredVideoApp = {
             view: 14.699,
             like: 1.818,
             comment: 399,
+            link: 'https://www.youtube.com/watch?v=ZGmpvhqYSDU'
         },
         {
             name: 'ReactJS là gì? Tại sao nên học ReactJS?',
@@ -628,6 +634,7 @@ const featuredVideoApp = {
             view: 28.722,
             like: 1.648,
             comment: 316,
+            link: 'https://www.youtube.com/watch?v=x0fSBAgBrOQ'
         },
         {
             name: 'Làm được gì sau khóa học?',
@@ -635,6 +642,7 @@ const featuredVideoApp = {
             view: 220.718,
             like: 1.511,
             comment: 91,
+            link: 'https://www.youtube.com/watch?v=R6plN3FvzFY&feature=youtu.be'
         },
         {
             name: 'Chọn ngành IT có sai lầm? Những trải nghiệm thực tế sau 2 tháng làm việc tại doanh nghiệp?',
@@ -642,6 +650,7 @@ const featuredVideoApp = {
             view: 37.330,
             like: 1.451,
             comment: 159,
+            link: 'https://www.youtube.com/watch?v=2sg1yNl1WvE&feature=youtu.be'
         },
         {
             name: 'Javascript có thể làm được gì? Giới thiệu qua về trang F8 | Học lập trình Javascript cơ bản',
@@ -649,6 +658,7 @@ const featuredVideoApp = {
             view: 212.258,
             like: 1.351,
             comment: 80,
+            link: 'https://www.youtube.com/watch?v=0SJE9dYdpps&feature=youtu.be'
         },
         {
             name: 'Học Flexbox qua ví dụ',
@@ -656,6 +666,7 @@ const featuredVideoApp = {
             view: 60.416,
             like: 1.094,
             comment: 94,
+            link: 'https://www.youtube.com/watch?v=YH-E4Y3EaT4'
         },
         {
             name: 'Làm sao để có thu nhập cao và đi xa hơn trong ngành IT?',
@@ -663,6 +674,7 @@ const featuredVideoApp = {
             view: 37.316,
             like: 1.934,
             comment: 196,
+            link: 'https://www.youtube.com/watch?v=G19jZzK5FWI&feature=youtu.be'
         },
     ],
 
@@ -674,10 +686,10 @@ const featuredVideoApp = {
             return `
             <div class="page__content-home-featured-video-item">
                 <div class="grid__column">
-                    <a href="" class="page__content-home-featured-video-link">
+                    <a href="${data.link}" target="_blank" class="page__content-home-featured-video-link">
                         <img src="${data.img}" alt="" class="page__content-home-featured-video-img">
                     </a>
-                    <a href="" class="page__content-home-featured-video-description">
+                    <a href="${data.link}" target="_blank" class="page__content-home-featured-video-description">
                         <h3 class="page__content-home-featured-video-description-text">${data.name}</h3>
                     </a>
                     <div class="page__content-home-featured-video-information">

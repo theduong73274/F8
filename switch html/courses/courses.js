@@ -89,7 +89,8 @@ const coursesApp = {
         },
         {
             name: 'HTML, CSS từ Zero đến Hero',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/2.png'
+            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/2.png',
+            link: './html-css-course.html'
         },
         {
             name: 'Don\'t Touch Your Face',
