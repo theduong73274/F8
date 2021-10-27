@@ -120,7 +120,9 @@ const htmlsSlider = sliderContent.map(function(content, index) {
                 <p class="page__content-slider-item-description">${content.description}</p>
                 <a href="${content.link}" class="page__content-slider-item-link" onpointerover="this.style.color= '${content.colorText}'" onpointerout="this.style.color='white'">${content.button}</a>
             </div>
-            <img src="${content.img}" alt="" class="page__content-slider-img">
+            <div class="page__content-slider-img-wrap">
+                <img src="${content.img}" alt="" class="page__content-slider-img">
+            </div>
         </div>
     `
 })
@@ -145,7 +147,7 @@ firstClone.id = 'slider__first-clone'
 lastClone.id = 'slider__last-clone'
 
 sliderList.append(firstClone)
-sliderList.append(lastClone)
+// sliderList.append(lastClone)
 
 
 const sliderWidth = 100;

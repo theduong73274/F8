@@ -179,3 +179,18 @@
 }
 
 
+/* Responsive */
+/* Tablet */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    .page__question-more {
+        width: 0;
+    }
+
+    .page__question-content {
+        width: 100%;
+    }
+   
+
+}

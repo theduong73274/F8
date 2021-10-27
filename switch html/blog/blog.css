@@ -158,3 +158,44 @@
     background-color: rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
+
+
+/* Responsive */
+/* Tablet */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    .header__wrap {
+        position: fixed;
+    }
+
+    .page__blog {
+        display: flex;
+        flex-direction: column;
+        overflow: initial;
+    }
+
+    .page__blog-content {
+        order: 2;
+        width: 100%;
+    }
+
+    .page__blog-content-wrap {
+        overflow: initial;
+    }
+
+    .page__blog-content-header {
+        margin-top: 20px;
+    }
+
+    .page__blog-more {
+        padding: 0 65px;
+        width: 100%;
+    }
+
+    .page__blog-more-recommend {
+        display: flex;
+    }
+   
+
+}

@@ -759,3 +759,31 @@
     color: var(--white-color);
     font-size: 1.2rem;
 }
+
+
+
+/* Responsive */
+/* Tablet */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    /* Courses page */
+
+    .grid__column-3 {
+        width: 33.33%;
+    }
+
+    .courses__content {
+        padding: 0 10px 0 30px;
+        width: 100%;
+    }
+
+    .courses__content-courses-wrap {
+        padding: 0;
+    }
+
+    .courses__content-courses {
+        padding-bottom: 50px;
+    }
+
+}
