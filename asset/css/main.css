@@ -493,6 +493,7 @@ html::-webkit-scrollbar {
     --height-btn-slider: 32px;
     height: var(--height-btn-slider);
     width: var(--width-btn-slider);
+    background-color: rgba(225, 225, 225, 0.8);
     border-radius: 50%;
     border: none;
     position: absolute;
@@ -1161,6 +1162,10 @@ html::-webkit-scrollbar {
     .page__content-home-featured-post,
     .page__content-home-courses {
         margin-bottom: 0;
+    }
+
+    .page__content-home-featured-video {
+        margin-bottom: 100px;
     }
 
 }
