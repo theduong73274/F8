@@ -1,4 +1,7 @@
 
+
+
+
 const widthDocument = document.querySelector('html')
 // const tabsDescription = document.querySelectorAll('.description-tab')
 // const panesDescription = document.querySelectorAll('.description-pane')
@@ -8,8 +11,6 @@ const paneContent = document.querySelector('.page__js-course-app-video-descripti
 const tabCourse = document.querySelector('.page__js-course-app-video-header-item-content');
 const tabAbout = document.querySelector('.page__js-course-app-video-header-item-about')
 
-
-
 // Hidden courses list
 const appDescriptionList = document.querySelector('.page__js-course-app-video-description')
 const courseBtnList = document.querySelector('.page__js-course-app-list-hidden-btn');
@@ -17,14 +18,15 @@ const courseBoxList = document.querySelector('.page__js-course-app-list');
 const courseVideoApp = document.querySelector('.page__js-course-app-video');
 const activeBtnCourses = document.querySelector('.page__js-course-app-video-display-btn');
 const courseVideoContent = document.querySelector('.page__js-course-app-video-content');
-
-courseBtnList.onclick = () => {
+courseBtnList.onclick = function() {
+    console.log(courseBtnList)
     courseBoxList.style.width = '0px';
     courseVideoApp.style.width = '100%';
     activeBtnCourses.style.opacity = '1';
     activeBtnCourses.style.display = 'flex';
     courseVideoContent.style.height = '100%';
     appDescriptionList.style.padding = '0 200px';
+    // alert()
 }
 
 
@@ -39,7 +41,6 @@ activeBtnCourses.onclick = () => {
 const btnOpenStyle = getComputedStyle(activeBtnCourses)
 
 const boxCourseListStyle = getComputedStyle(courseBoxList)
-console.log(boxCourseListStyle.width)
 courseVideoContent.onmouseover = function() {
     if(boxCourseListStyle.width != '320px') {
         activeBtnCourses.style.opacity = '1';
@@ -54,7 +55,6 @@ activeBtnCourses.onmouseover = function() {
         activeBtnCourses.style.opacity = '1'
     }
 }
-
 
 
 // Courses List
@@ -964,13 +964,11 @@ const lessionApp = {
         lessionsList.onclick = function(e) {
             _this.lessions.map(function(data) {
                 data.lession.map(function(item) {
-                    // console.log(youtubes)
                     const courseNode = e.target.closest('.page__js-course-app-list-content-item')
                     const courseNodeNumber = Number(courseNode.getAttribute("dataset"))
                     if(courseNode && item.id === courseNodeNumber) {
                         if(item.iframe != '') {
                             courseVideoContent.innerHTML = item.iframe
-                            // console.log((item.iframe).getDuration())
                         }
                     }
                 })
@@ -1156,7 +1154,6 @@ const panesDescription = document.querySelectorAll('.description-pane')
 
 tabsDescription.forEach(function(tab, index) {
     const pane = panesDescription[index]
-    // console.log(pane)
     tab.onclick = function() {
         document.querySelector('.description-tab.isclick').classList.remove('isclick')
         document.querySelector('.description-pane.isopen-description').classList.remove('isopen-description')
@@ -1165,4 +1162,6 @@ tabsDescription.forEach(function(tab, index) {
         pane.classList.add('isopen-description')
     }
 })
+
+
 
