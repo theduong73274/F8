@@ -1135,7 +1135,7 @@ const windowWidth = window.innerWidth
 
 window.addEventListener('resize', function(e) {
     const heightPercent = ((e.target.innerWidth)/windowWidth * 100) - 20
-    if(e.target.innerWidth <= 1023) {
+    if(e.target.innerWidth > 739 && e.target.innerWidth <= 1023) {
         paneCourse.classList.add('isopen-description');
         paneContent.classList.remove('isopen-description')
         tabCourse.classList.add('isclick');

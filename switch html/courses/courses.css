@@ -878,4 +878,103 @@
     .courses__content-courses-img {
         height: auto;
     }
+
+    .page__js-course-header-left-name-text {
+        word-wrap: normal;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+    }
+
+    .page__js-course-header-right-text {
+        width: 76px;
+    }
+
+
+    /* Video */
+
+    .page__js-course-header-left-icon {
+        display: none;
+    }
+
+    .page__js-course-header-left-back {
+        margin-right: 0;
+    }
+
+    .page__js-course-header-left-name-text::before {
+        display: none;
+    }
+
+    .page__js-course-app-video {
+        width: 100%;
+    }
+
+    .page__js-course-app-video-content-wrap {
+        padding: 0;
+        height: 51%;
+    }
+
+    .page__js-course-app-video-description {
+        padding: 0;
+    }
+
+
+    /* Pane */
+    .page__js-course-app-list {
+        display: none;
+    }
+
+    .page__js-course-app-video-header-item-content {
+        display: flex !important;
+    }
+
+    .page__js-course-app-list-hidden-btn {
+        display: none;
+    }
+
+    .page__js-course-app-video-description-header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .page__js-course-app-video-description-header span {
+        margin-right: 0;
+    }
+
+    /* description */
+
+    .page__js-course-app-video-description-sub span {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    .page__js-course-app-video-description-wrap-content {
+        padding: 0 15px 40px 15px;
+    }
+
+    .page__js-course-app-video-comment-app-wrap {
+        padding: 0;
+    }
+
+    .page__js-course-app-video-description-footer {
+        margin-bottom: 150px;
+    }
+
+    .page__js-course-app-list-respon {
+        padding-bottom: 50px;
+    }
+
+    .page__js-course-app-video-description-wrap-content-note-time {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .page__js-course-app-video-description-wrap-note {
+        padding: 20px 10px 50px 10px;
+    }
+
+    .page__js-course-app-video-description-wrap-content-note-new {
+        margin-right: 0 !important;
+    }
 }
