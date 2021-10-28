@@ -444,7 +444,7 @@ const featuredPostApp = {
         },
         {
             name: 'Học như thế nào là phù hợp ?',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/blog_posts/791/615de64e3f449.jpg',
+            img: 'https://f40-zpg.zdn.vn/6414417963368895323/8af558e3d88910d74998.jpg',
             avatar: 'https://avatar-redirect.appspot.com/google/110021593610685676732?size=400',
             user: 'Tien Pham Ngoc',
             date: '15 ngày trước',
@@ -819,5 +819,20 @@ for(let i = 0; i < testLink.length; i++) {
     }
 }
     
+
+const menuRespon = document.querySelector('.header__icon-menu')
+const sidebarRespon = document.querySelector('.side__bar-respon')
+const sidebarLeft = document.querySelector('.side__bar-respon-left')
+const exitSibar = document.querySelector('.side__bar-respon-right')
+
+menuRespon.onclick = function() {
+    sidebarRespon.classList.add('iscover-fill');
+    sidebarLeft.classList.add('isopen-sidebar-respon')
+}
+
+exitSibar.onclick = function() {
+    sidebarRespon.classList.remove('iscover-fill');
+    sidebarLeft.classList.remove('isopen-sidebar-respon')
+}
 
 
