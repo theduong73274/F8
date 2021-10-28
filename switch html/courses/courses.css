@@ -977,4 +977,22 @@
     .page__js-course-app-video-description-wrap-content-note-new {
         margin-right: 0 !important;
     }
+
+    .page__js-course-app-video-description-comment-handle {
+        margin-bottom: 10px;
+    }
+
+    .page__js-course-app-video-description-comment-handle-descript {
+        position: relative;
+    }
+
+    .page__js-course-app-video-description-comment-handle-code {
+        position: absolute;
+        top: 5px;
+        left: 0;
+    }
+
+    .page__js-course-app-video-description-comment-handle-post {
+        margin-left: 45px;
+    }
 }
