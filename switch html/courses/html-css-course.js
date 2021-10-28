@@ -1,3 +1,12 @@
+const widthDocument = document.querySelector('html')
+const tabsDescription = document.querySelectorAll('.description-tab')
+const panesDescription = document.querySelectorAll('.description-pane')
+
+const paneCourse = document.querySelector('.page__js-course-app-list-respon');;
+const paneContent = document.querySelector('.page__js-course-app-video-description-wrap-content')
+const tabCourse = document.querySelector('.page__js-course-app-video-header-item-content');
+const tabAbout = document.querySelector('.page__js-course-app-video-header-item-about')
+
 
 
 // Hidden courses list
@@ -7,6 +16,7 @@ const courseBoxList = document.querySelector('.page__js-course-app-list');
 const courseVideoApp = document.querySelector('.page__js-course-app-video');
 const activeBtnCourses = document.querySelector('.page__js-course-app-video-display-btn');
 const courseVideoContent = document.querySelector('.page__js-course-app-video-content');
+
 
 courseBtnList.onclick = () => {
     courseBoxList.style.width = '0px';
@@ -29,7 +39,6 @@ activeBtnCourses.onclick = () => {
 const btnOpenStyle = getComputedStyle(activeBtnCourses)
 
 const boxCourseListStyle = getComputedStyle(courseBoxList)
-console.log(boxCourseListStyle.width)
 courseVideoContent.onmouseover = function() {
     if(boxCourseListStyle.width != '320px') {
         activeBtnCourses.style.opacity = '1';
@@ -49,8 +58,11 @@ activeBtnCourses.onmouseover = function() {
 
 // Courses List
 const lessionsList = document.querySelector('.page__js-course-app-list-wrap')
+const lessionsList2 = document.querySelector('.page__js-course-app-list-wrap-respon')
 const lessionItemTest = document.querySelector('.page__js-course-app-list-item-wrap')
 const linkVideoCourses = document.querySelector('.page__js-course-app-video-content-wrap')
+const testscroll = document.querySelector('.page__js-course-app-video')
+
 
 const lessionApp = {
     lessions: [
@@ -62,7 +74,7 @@ const lessionApp = {
                     name: '1. Làm được gì sau khóa học?',
                     icon: 'fas fa-play-circle',
                     iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/R6plN3FvzFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-                    practice: 'flex'
+                    practice: 'flex',
                 },
                 {
                     id: 2,
@@ -839,7 +851,7 @@ const lessionApp = {
             }
             const testdata = data.lession.map(function(item,index) {
                 return `
-                <div class="page__js-course-app-list-content-item" dataset = ${item.id}>
+                <div class="page__js-course-app-list-content-item ${item.active}" dataset = ${item.id}>
                     <div class="page__js-course-app-list-content-item-icon">
                         <i class="fas fa-check"></i>
                     </div>
@@ -876,7 +888,8 @@ const lessionApp = {
                     `
                 })
                 
-                lessionsList.innerHTML = lessionsHtmls.join('')
+                lessionsList.innerHTML = lessionsHtmls.join('');
+                lessionsList2.innerHTML = lessionsHtmls.join('');
                 
                 
     },
@@ -887,19 +900,35 @@ const lessionApp = {
         lessionsList.onclick = function(e) {
             _this.lessions.map(function(data) {
                 data.lession.map(function(item) {
-                    // console.log(youtubes)
                     const courseNode = e.target.closest('.page__js-course-app-list-content-item')
                     const courseNodeNumber = Number(courseNode.getAttribute("dataset"))
                     if(courseNode && item.id === courseNodeNumber) {
                         if(item.iframe != '') {
                             courseVideoContent.innerHTML = item.iframe
-                            // console.log((item.iframe).getDuration())
+                        }
+                    }
+                })
+            })
+        }
+        
+        // responsive
+        lessionsList2.onclick = function(e) {
+            
+            _this.lessions.map(function(data) {
+                data.lession.map(function(item) {
+                    testscroll.scrollTop = 0
+                    const courseNode = e.target.closest('.page__js-course-app-list-content-item')
+                    const courseNodeNumber = Number(courseNode.getAttribute("dataset"))
+                    if(courseNode && item.id === courseNodeNumber) {
+                        if(item.iframe != '') {
+                            courseVideoContent.innerHTML = item.iframe
                         }
                     }
                 })
             })
         }
     },
+    
     
     
     // Run
@@ -910,6 +939,7 @@ const lessionApp = {
 }
 
 lessionApp.start()
+
 
 
 // comment
@@ -990,19 +1020,19 @@ const commentApp = {
         const commnetHtmls = this.comments.map(function(data) {
             return `
             <div class="page__js-course-app-video-comment-app-item">
-                <img src="${data.img}" class="page__js-course-app-video-comment-app-user-img"></img>
-                <div class="page__js-course-app-video-comment-app-item-content-wrap">
-                    <div class="page__js-course-app-video-comment-app-item-content">
-                        <h3 class="page__js-course-app-video-comment-app-item-name">${data.name}</h3>
-                        <span class="page__js-course-app-video-comment-app-item-content-text">${data.content}</span>
-                    </div>
-                    <div class="page__js-course-app-video-comment-app-item-content-handle">
-                        <span class="page__js-course-app-video-comment-app-item-content-handle-text">Thích</span>
-                        <span class="page__js-course-app-video-comment-app-item-content-handle-text">Trả lời</span>
-                        <span class="page__js-course-app-video-comment-app-item-content-handle-date">2 tháng trước</span>
-                        <i class="fas fa-ellipsis-h"></i>
-                    </div>
-                </div>
+            <img src="${data.img}" class="page__js-course-app-video-comment-app-user-img"></img>
+            <div class="page__js-course-app-video-comment-app-item-content-wrap">
+            <div class="page__js-course-app-video-comment-app-item-content">
+            <h3 class="page__js-course-app-video-comment-app-item-name">${data.name}</h3>
+            <span class="page__js-course-app-video-comment-app-item-content-text">${data.content}</span>
+            </div>
+            <div class="page__js-course-app-video-comment-app-item-content-handle">
+            <span class="page__js-course-app-video-comment-app-item-content-handle-text">Thích</span>
+            <span class="page__js-course-app-video-comment-app-item-content-handle-text">Trả lời</span>
+            <span class="page__js-course-app-video-comment-app-item-content-handle-date">2 tháng trước</span>
+            <i class="fas fa-ellipsis-h"></i>
+            </div>
+            </div>
             </div>
             `
         })
@@ -1014,16 +1044,50 @@ const commentApp = {
 
     start: function() {
         this.render()
+        
+        // responsive
+        if(window.innerWidth <= 1023) {
+            paneCourse.classList.add('isopen-description');
+            paneContent.classList.remove('isopen-description')
+            tabCourse.classList.add('isclick');
+            tabAbout.classList.remove('isclick')
+        } else {
+            paneCourse.classList.remove('isopen-description');
+            paneContent.classList.add('isopen-description')
+            tabCourse.classList.remove('isclick')
+            tabAbout.classList.add('isclick')
+        }
     }
-
+    
 }
 
 commentApp.start()
 
+
+
+
+// Responsive
+
+const windowWidth = window.innerWidth
+
+window.addEventListener('resize', function(e) {
+    const heightPercent = ((e.target.innerWidth)/windowWidth * 100) - 20
+    if(e.target.innerWidth <= 1023) {
+        paneCourse.classList.add('isopen-description');
+        paneContent.classList.remove('isopen-description')
+        tabCourse.classList.add('isclick');
+        tabAbout.classList.remove('isclick')
+        linkVideoCourses.style.height = `${heightPercent}%`
+    } else {
+        paneCourse.classList.remove('isopen-description');
+        paneContent.classList.add('isopen-description')
+        tabCourse.classList.remove('isclick')
+        tabAbout.classList.add('isclick')
+    }
+})
 // Description
 
-const tabsDescription = document.querySelectorAll('.description-tab')
-const panesDescription = document.querySelectorAll('.description-pane')
+
 
 tabsDescription.forEach(function(tab, index) {
     const pane = panesDescription[index]
@@ -1031,11 +1095,10 @@ tabsDescription.forEach(function(tab, index) {
     tab.onclick = function() {
         document.querySelector('.description-tab.isclick').classList.remove('isclick')
         document.querySelector('.description-pane.isopen-description').classList.remove('isopen-description')
-
+        
         this.classList.add('isclick')
         pane.classList.add('isopen-description')
     }
 })
-
 
 

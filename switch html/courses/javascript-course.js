@@ -1,4 +1,14 @@
 
+const widthDocument = document.querySelector('html')
+// const tabsDescription = document.querySelectorAll('.description-tab')
+// const panesDescription = document.querySelectorAll('.description-pane')
+
+const paneCourse = document.querySelector('.page__js-course-app-list-respon');;
+const paneContent = document.querySelector('.page__js-course-app-video-description-wrap-content')
+const tabCourse = document.querySelector('.page__js-course-app-video-header-item-content');
+const tabAbout = document.querySelector('.page__js-course-app-video-header-item-about')
+
+
 
 // Hidden courses list
 const appDescriptionList = document.querySelector('.page__js-course-app-video-description')
@@ -49,8 +59,10 @@ activeBtnCourses.onmouseover = function() {
 
 // Courses List
 const lessionsList = document.querySelector('.page__js-course-app-list-wrap')
+const lessionsList2 = document.querySelector('.page__js-course-app-list-wrap-respon')
 const lessionItemTest = document.querySelector('.page__js-course-app-list-item-wrap')
 const linkVideoCourses = document.querySelector('.page__js-course-app-video-content-wrap')
+const testscroll = document.querySelector('.page__js-course-app-video')
 
 const lessionApp = {
     lessions: [
@@ -940,6 +952,8 @@ const lessionApp = {
                 })
                 
                 lessionsList.innerHTML = lessionsHtmls.join('')
+                lessionsList2.innerHTML = lessionsHtmls.join('');
+
                 
                 
     },
@@ -962,6 +976,24 @@ const lessionApp = {
                 })
             })
         }
+
+
+        // responsive
+        lessionsList2.onclick = function(e) {
+            
+            _this.lessions.map(function(data) {
+                data.lession.map(function(item) {
+                    testscroll.scrollTop = 0
+                    const courseNode = e.target.closest('.page__js-course-app-list-content-item')
+                    const courseNodeNumber = Number(courseNode.getAttribute("dataset"))
+                    if(courseNode && item.id === courseNodeNumber) {
+                        if(item.iframe != '') {
+                            courseVideoContent.innerHTML = item.iframe
+                        }
+                    }
+                })
+            })
+        }
     },
     
     
@@ -969,6 +1001,19 @@ const lessionApp = {
     start: function () {
         this.loadLinkCourse()
         this.render()
+
+        // responsive
+        if(window.innerWidth <= 1023) {
+            paneCourse.classList.add('isopen-description');
+            paneContent.classList.remove('isopen-description')
+            tabCourse.classList.add('isclick');
+            tabAbout.classList.remove('isclick')
+        } else {
+            paneCourse.classList.remove('isopen-description');
+            paneContent.classList.add('isopen-description')
+            tabCourse.classList.remove('isclick')
+            tabAbout.classList.add('isclick')
+        }
     }
 }
 
@@ -1082,6 +1127,27 @@ const commentApp = {
 }
 
 commentApp.start()
+
+
+// Responsive
+
+const windowWidth = window.innerWidth
+
+window.addEventListener('resize', function(e) {
+    const heightPercent = ((e.target.innerWidth)/windowWidth * 100) - 20
+    if(e.target.innerWidth <= 1023) {
+        paneCourse.classList.add('isopen-description');
+        paneContent.classList.remove('isopen-description')
+        tabCourse.classList.add('isclick');
+        tabAbout.classList.remove('isclick')
+        linkVideoCourses.style.height = `${heightPercent}%`
+    } else {
+        paneCourse.classList.remove('isopen-description');
+        paneContent.classList.add('isopen-description')
+        tabCourse.classList.remove('isclick')
+        tabAbout.classList.add('isclick')
+    }
+})
 
 // Description
 

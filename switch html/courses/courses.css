@@ -268,6 +268,10 @@
     color: rgba(0, 0, 0, 1);
 }
 
+.page__js-course-app-video-header-item-content {
+    display: none !important;
+}
+
 .page__js-course-app-video-description-wrap-content {
     display: none;
 }
@@ -596,10 +600,16 @@
 
 
 
+
 /* Relate */
 
 .page__js-course-app-video-description-wrap-relate {
     padding-top: 50px;
+    display: none;
+}
+
+
+.page__js-course-app-list-respon {
     display: none;
 }
 
@@ -609,7 +619,7 @@
 
 /* Courses list */
 
-.page__js-course-app-list {
+.page__js-course-app-list{
     background-color: var(--white-color);
     width: 25%;
     height: 100%;
@@ -705,6 +715,10 @@
     transition: all ease 0.3s;
 }   
 
+.course-item-active {
+    background-color: red;
+}
+
 .page__js-course-app-list-content-item:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -786,4 +800,82 @@
         padding-bottom: 50px;
     }
 
+    .page__js-course-app-video {
+        width: 100%;
+    }
+
+    .page__js-course-app-video-content-wrap {
+        padding: 0 8.5%;
+        height: 75vh;
+    }
+
+    .page__js-course-app-video-description {
+        padding: 0 8.5%;
+    }
+
+
+    /* Pane */
+    .page__js-course-app-list {
+        display: none;
+    }
+
+    .page__js-course-app-video-header-item-content {
+        display: flex !important;
+    }
+
+    .page__js-course-app-list-hidden-btn {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 740px) {
+    .page__sidebar,
+    .header__icon,
+    .header__information-img,
+    .header__search {
+        display: none;
+    }
+
+    .header__wrap {
+        padding: 0 20px;
+    }
+
+    .header__icon-menu {
+        padding: 0;
+    }
+
+    .header__information-wrap {
+        padding: 0 20px;
+    }
+
+    .header__icon-menu {
+        display: flex;
+    }
+
+    .header__information-notify i {
+        margin: 0;
+    }
+
+    .courses__content-courses {
+        padding-bottom: 50px;
+    }
+
+    .grid__column-3 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .courses__content-courses-wrap {
+        padding: 0;
+    }
+
+    .courses__content {
+        padding: 0 20px;
+    }
+
+    .courses__content-courses-img {
+        height: auto;
+    }
 }

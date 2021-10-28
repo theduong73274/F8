@@ -94,7 +94,7 @@ const coursesApp = {
         },
         {
             name: 'Don\'t Touch Your Face',
-            img: 'https://cdn.fullstack.edu.vn/f8-learning/courses/4/4.jpeg'
+            img: 'https://f48-zpg.zdn.vn/6150133980880868992/d94b7b529a3a52640b2b.jpg'
         },
         {
             name: 'Javascript nâng cao',
