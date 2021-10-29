@@ -94,7 +94,7 @@ const coursesApp = {
         },
         {
             name: 'Don\'t Touch Your Face',
-            img: 'https://f48-zpg.zdn.vn/6150133980880868992/d94b7b529a3a52640b2b.jpg'
+            img: 'https://b.f9.photo.talk.zdn.vn/3467470727949930237/38bd9744143ddc63852c.jpg'
         },
         {
             name: 'Javascript nâng cao',

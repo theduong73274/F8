@@ -21,7 +21,8 @@
 
 .courses__content-courses-img {
     width: 100%;
-    height: 134px;
+    height: auto;
+    min-height: 130px;
     border-radius: 15px;
 }
 
