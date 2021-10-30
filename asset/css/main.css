@@ -437,7 +437,6 @@ html::-webkit-scrollbar {
 
 .page__wrap {
     display: flex;
-    justify-content: space-between;
 }
 
 .page__sidebar {

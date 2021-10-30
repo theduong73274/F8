@@ -1,5 +1,12 @@
+.page__question-wrap {
+    display: flex;
+    width: 100%;
+}
+
 .page__question {
     width: 100%;
+    margin: auto;
+    max-width: 2080px;
     height: calc(100vh - 66px);
     display: flex;
     overflow: hidden;

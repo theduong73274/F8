@@ -1,5 +1,12 @@
+.page__blog-wrap {
+    display: flex;
+    width: 100%;
+}
+
 .page__blog {
     width: 100%;
+    max-width: 2080px;
+    margin: auto;
     height: calc(100vh - 66px);
     display: flex;
     overflow: hidden;
