@@ -587,7 +587,8 @@ html::-webkit-scrollbar {
 }
 
 .page__content-wrap {
-    max-width: 1920px;
+    /* max-width: 1920px; */
+    width: 100%;
     padding: 14px 40px 0 20px;
 
 }
@@ -624,7 +625,7 @@ html::-webkit-scrollbar {
     position: absolute;
     z-index: 1;
     top: calc((100% - var(--height-btn-slider)) / 2);
-    left: 90.8%;
+    right: 81px;
     cursor: pointer;
 }
 
@@ -658,6 +659,7 @@ html::-webkit-scrollbar {
 .page__content-slider-item {
     flex: 0 0 calc(100%);
     display: flex;
+    justify-content: space-between;
     flex-wrap: nowrap;
     border-radius: 15px;
     align-items: center;
